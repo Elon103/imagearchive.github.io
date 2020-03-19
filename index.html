@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<link rel="SHORTCUT ICON" href="resources/images/logo/proxima_favicon.ico"/> 
+    <title>Image Archive System</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css"/>
+    <script src="resources/jquery/jquery_2_2_4.min.js"></script>
+
+    <script src="app/login/controller/login.js"></script>
+    <script src="config/global.js"></script>
+
+    <script type="text/javascript">
+    	var token = get_token();
+		if(token != " token=" && token != null){
+			window.location.href = 'app/main.html';
+		}
+    </script>
+
+    <style type="text/css">
+	    Html, body{
+			height:100%;
+		    overflow: hidden;
+			background-image: url(resources/images/login_bg.jpg);
+		}
+
+		.grandParentContaniner{
+			display:table; height:100%; margin: 0 auto;
+		}
+
+		.parentContainer{
+			display:table-cell; vertical-align:middle;
+		}
+
+		.cls_hidden{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="grandParentContaniner">
+		<div class="parentContainer">
+			<!-- Login Form -->
+			<div id="login_view" class="login_form">
+				
+			</div>
+			<!-- Forgot Password Form -->
+			<div id="forgot_password_view" class="forgot_password_form cls_hidden">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
