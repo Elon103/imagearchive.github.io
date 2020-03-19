@@ -1,0 +1,63 @@
+<div class="modal-dialog" style="">
+	<div class="modal-content">
+		<div class="modal-header" style="padding: 3px; padding-right: 5px; padding-left: 5px; border: none;">
+	        <button type="button" class="close" data-dismiss="modal" style="outline: none; opacity: 2; color: black;">&times;</button>
+	        <h5 class="modal-title">Create New User</h5>
+      	</div>
+      	<div id="" class="" style="border: 2px solid #D0D0D0; height: 340px;">
+      		<form action="#" method="post" id="signupform" class="form-horizontal" role="form" data-toggle="validator" onsubmit="fn_createUser(); return false;">
+				<div class="form-group" style="">
+					<label for="email" class="col-md-3 control-label" style="margin-top: 7px;">Email</label>
+					<div class="col-md-9">
+						<input type="text" class="email form-control" name="data[email]" placeholder="Email" pattern="^[a-zA-Z0-9_-.]+@[a-zA-Z0-9_-.]+$" value="" required="">
+					</div>
+				</div>
+				
+				<div class="form-group" style="">
+					<label for="login_id" class="col-md-3 control-label" style="margin-top: 7px;">Login_ID</label>
+					<div class="col-md-9">
+						<input type="text" class="login_id form-control" name="data[login_id]" placeholder="Login_ID" value="" required="">
+					</div>
+				</div>
+				
+				<div class="form-group" style="">
+					<label for="firstname" class="col-md-3 control-label" style="margin-top: 7px;">First Name</label>
+					<div class="col-md-9">
+						<input type="text" class="firstname form-control" name="data[firstname]" placeholder="First Name" value="" required="">
+					</div>
+				</div>
+				
+				<div class="form-group" style="">
+					<label for="lastname" class="col-md-3 control-label" style="margin-top: 7px;">Last Name</label>
+					<div class="col-md-9">
+						<input type="text" class="lastName form-control" name="data[lastname]" placeholder="Last Name" value="" required="">
+					</div>
+				</div>
+				
+				<div class="form-group" style="">
+					<label for="password" class="col-md-3 control-label" style="margin-top: 7px;">Password</label>
+					<div class="col-md-9">
+						<input type="password" id="password" class="password form-control" name="data[password]" pattern="^[\w\'.-]{4,20}$" placeholder="Password" value="" required="">
+					</div>
+				</div>
+				
+				<div class="form-group" style="">
+					<label for="admin_yn" class="col-md-3 control-label" style="margin-top: 7px;">Permission</label>
+					<div class="col-md-9" style="margin-top: 8px;">
+						<input type="radio" name="data[admin_yn]" value="2" checked="">User							
+						<input type="radio" name="data[admin_yn]" value="3">Moderator	
+						<input type="radio" name="data[admin_yn]" value="4">Admin					
+					</div>
+				</div>
+
+				<div class="form-group" style="">
+					<div class="col-md-offset-3 col-md-9">
+						<input id="btn-signup" type="submit" class="btn btn-success" name="btnCreateUser" value="Create New User">
+						<span style="margin-left:8px;"></span>
+						<input id="btn-reset" type="reset" class="btn btn-success" name="" value="Reset">
+					</div>
+				</div>
+			</form>
+      	</div>
+	</div>
+</div>

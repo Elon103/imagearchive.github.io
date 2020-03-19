@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<link rel="SHORTCUT ICON" href="../resources/images/logo/proxima_favicon.ico"/> 
+    <title>Image Archive System</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css"/> 
+	<link rel="stylesheet" href="../resources/css/style.css" type="text/css">
+	<link rel="stylesheet" href="../resources/font-awesome/css/font-awesome.min.css" />
+	<link href="../resources/font-awesome/css/all.css" rel="stylesheet">
+    <script src="../resources/jquery/jquery_2_2_4.min.js"></script>
+
+    <script src="../config/global.js"></script>
+    <script src="../resources/js/main.js"></script>
+    <script src="user_management/controller/user_mng.js"></script>
+
+    <style type="text/css">
+		.cls_hidden{
+			display: none;
+		}
+
+		.no-js #loader { 
+	    	display: none;  
+	    }
+		.js #loader { 
+			display: block; position: absolute; left: 100px; top: 0; 
+		}
+		.se-pre-con {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url('../resources/images/loading/processing.gif') center no-repeat #fff;
+		}
+	</style>
+
+	<script type="text/javascript">
+		// Show icon load , when load page
+		$(window).load(function() {
+			$(".se-pre-con").fadeOut("slow");
+		});
+		// Disable Right Click
+		$(document).bind('contextmenu', function(e) {
+		    e.preventDefault();
+		});
+
+		// Load View
+		$(function(){
+			$("#main_card_search").load("search_page/view/search.html");
+	    });
+
+		// Auto change size of web 
+		setTimeout(function () {
+		  	document.getElementById('container_content').style.height = ($(window).height() - (53)).toString()+'px';
+		  	
+		  	$('#container_content>div').height(($(window).height() - (55)).toString()+'px');
+
+		}, 1);
+		window.addEventListener('resize', function(event){
+			document.getElementById('container_content').style.height = ($(window).height() - (53)).toString()+'px';
+			
+			$('#container_content>div').height(($(window).height() - (55)).toString()+'px');
+		})
+
+		// Change view page
+		function change_page(page_name){
+			$("#container_content>div").addClass('cls_hidden');
+			$("#"+page_name).removeClass('cls_hidden');
+
+			if(page_name == "main_card_user_management"){
+				$("#main_card_user_management").load("user_management/view/user_mng.html");
+				get_allUser();
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div class="se-pre-con"></div>
+	<div class="container-fluid" style="margin: 0px;">
+		<div class="row">
+			<header class="header_big_mode">
+		        <div class="logo_box">
+		            <img src="../resources/images/logo/logo_archive.png" style="height: 50px; padding-top : 11px; padding-right : 50px; padding-left : 25px;">
+		        </div>
+		        <div class="search" style="">
+		        	<div class="form-group" style=" float: left; margin-top: 13px; margin-bottom: 0px;">
+			          	<input autocomplete="off" type="text" onkeypress="isInputNumberLetter(event)" id="search_text" style="float: left;color: white; border-radius: unset; background-color: #1F1F1F; height: 27px; width: 376px; border: 1px solid black;" class="form-control" placeholder="Enter your search word" name="search">
+			        	<button value="search" type="" onclick="fn_search_image_by_text();" class="glyphicon glyphicon-search" style="outline:none; margin-left: 5px;border-radius: 3px; height: 25px; border: none; background-color: #B0B0B0; top: 1px; float: right;" data-toggle="tooltip" data-placement="bottom" title="Search"></button>
+			        </div>
+		        </div>        
+		        <div id="info" class="dropdown">
+					<button class="dropdown-toggle dropLog" type="button" data-toggle="dropdown" style="float: right; margin-right: 107px;padding: 3px 6px;padding-top: 4px;" aria-expanded="false"><script> document.write(user_id); </script>
+						<span class="caret " style="display:none;"></span>
+						<div class="bordericonLog">
+							<i class="glyphicon glyphicon-user icon_login"></i> 
+						</div>
+					</button>
+					<ul class="dropdown-menu" style="right: 85px; left: auto; top: 22px;">
+						<div class="arrow-up" style="width:0px; height:0px; border-right:16px solid transparent; border-left: 16px solid transparent;  border-bottom:16px solid white; margin-left: 72px;margin-top: -14px; color: white !important"></div>
+			            <li style="cursor: pointer;"><a onclick="change_page('main_card_user_management');">User Management</a></li>
+			            <li style="cursor: pointer;"><a onclick="change_page('main_card_config_system');">Configuration System</a></li>
+			            <li style="cursor: pointer;"><a onclick="change_page('main_card_change_password');">Change Password</a></li>
+						<li style="cursor: pointer;"><a onclick="fn_logout();">Logout</a></li>
+					</ul>
+				</div>
+	        </header>
+	        <div id="container_content" class="container_content" style="margin-top: 53px; background-color: #1F1F23;">
+				<div id="main_card_user_management" class="cls_hidden" style="color: white; background-color: #1F1F23; border: 1px solid red;">User Management Page</div>
+				<div id="main_card_config_system" class="cls_hidden" style="color: white; background-color: #1F1F23; border: 1px solid red;">Config System Page</div>
+				<div id="main_card_change_password" class="cls_hidden" style="color: white; background-color: #1F1F23; border: 1px solid red;">Change Password Page</div>
+				<div id="main_card_search" class=""  style="color: white; background-color: #1F1F23; border: 1px solid red;"></div>
+			</div>
+	  	</div>
+	</div>
+</body>
+    <script src="../resources/jquery/jquery.form.min.js"></script>
+    <script src="../resources/jquery/jquery.min.js"></script>
+	<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
+</html>
+

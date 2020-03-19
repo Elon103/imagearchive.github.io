@@ -1,0 +1,27 @@
+<img style="width: 340px;" src="resources/images/logo/proxima_login_logo.png"><br/><br/>
+<form method="POST" id="formLogin" autocomplete="off" onsubmit="fn_login(); return false;">
+	<div class="form-group">
+		<div class="input-group">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-user icon_login_form"></i></span>
+			<input style="min-width: 300px;" id="username_login" required type="text" class="form-control no-border" name="username_login" placeholder="Username" value="bioz">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="input-group">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-lock icon_login_form"></i></span>
+			<input style="min-width: 300px;" id="password_login" required type="password" class="form-control" name="password_login" placeholder="Password" value="bioz">
+		</div>
+	</div>
+	<button type="submit" name="login" class="btn btn-primary btn-block" style="min-width: 340px;">Login</button><br>
+	<div class="inline" style="min-width: 340px;">
+		<select class="form-control" id="lang_type_selected" name='lang' onchange='changeLang();' style="height: 19px; width: 135px;float: left;margin-top: -3px;padding: 0px;border: none;box-shadow: none;">
+		   <option value='ENG' selected>English (ENG)</option>
+		   <option value='KOR'>한글 (KOR)</option>
+		   <option value='VIE'>Vietnamese (VIE)</option>
+	  	</select>
+	    <div style="float:right; font-size: 95%; top:-20px;">
+           	<a onclick="forgot_password_view();" style="color:#979797; text-decoration: none; cursor: pointer;">Forgot Password ?</a>
+        </div>
+	</div>
+	<div class="alert alert-danger hidden"></div>
+</form>

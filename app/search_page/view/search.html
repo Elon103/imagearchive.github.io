@@ -1,0 +1,207 @@
+<!-- START LEFT PENAL -->
+<div id="search_left_content" style="width: 252px; background-color: #1F1F23; color: white; padding: 0px;margin: 0px; position: absolute;border-right: 2px solid #080808;">
+	<div id="search_left_menu" style="background-color: #2D2D33; height: 100%;">
+		<div id="search_left_category" style="background-color: yellow; height: 70%;">
+			<div id ="left_group_menu" style="background-color: #1f1f23; padding: 1px;height: 33px;">
+				<div id ="group_menu_left" class="cls_group_menu cls_active_group_menu" style=" height: 100%; width: 50%; float: left;">
+					<p style="text-align: center; margin: 4px 0px 0px 0px;">Folder</p>
+				</div>
+				<div id ="group_menu_rigth" class="cls_group_menu" style="height: 100%; width: 50%; float: right;">
+					<p style="text-align: center; margin: 4px 0px 0px 0px;">Timeline</p>
+				</div>
+			</div>
+			<div id ="" class="cls_categoryAction" style="background-color: #1f1f23;height: 33px;">
+				<div id ="" class="cate-create" style="height: 100%; width: 83px; float: left;">
+					<p style="text-align: center; margin: 5px 0px 0px 0px;">
+						<span onclick="fn_open_create_model()">
+							<img id="create_new_category" alt="create new category" src="../resources/images/icon/new-upload-folder-icon.png" style="cursor: pointer;" data-toggle="tooltip" title="Create a New Category">
+						</span>
+					</p>
+				</div>
+				<div id ="" class="cate-rename" style="height: 100%; width: 83px; float: left;">
+					<p style="text-align: center; margin: 5px 0px 0px 0px;">
+						<span onclick="fn_open_rename_model()">
+							<img id="rename_category_button_icon" alt="rename category folder" src="../resources/images/icon/rename-folder-icon.png" style="cursor: pointer;" data-toggle="tooltip" title="Rename Category">
+						</span>
+					</p>
+				</div>
+				<div id ="" class="cate-delete" style="height: 100%; width: 83px; float: left;">
+					<p style="text-align: center; margin: 5px 0px 0px 0px;">
+						<span onclick="fn_delete_category()">
+							<img id="delete_category_icon" alt="Delete category" src="../resources/images/icon/delete-folder-icon.png" style="cursor: pointer;">
+						</span>
+					</p>
+				</div>
+			</div>
+			<div id ="folder_category" style="background-color: #26262B ; overflow: auto; overflow-x: hidden;">
+				<ul class = "tree_node" style="margin-left: -16px; margin-top: 0px; ">
+					<!-- Start Tree Category for Image	 -->
+					<!-- End   Tree Category for Image   -->
+				</ul>
+				<ul class = "tree_node_timeline hidden" style="margin-left: -16px; margin-top: 0px;">
+					<!-- Start Tree Category for Video	 -->
+					<!-- End   Tree Category for Video   -->
+				</ul>
+			</div>
+		</div>
+		<div id="search_left_tag_color" style="height: 30%;">
+			<div id ="search_left_tag_color_title" style="background-color: #1f1f23; padding: 1px; height: 33px;">
+				<span style="float: left; font-size: 14px; top: 9px; left: 10px; color: #00A7DC!important;" class="glyphicon glyphicon-tags">
+				</span>
+				<h5 style="color: #ffffff; margin-left: 31px; font-size: 14px; font-weight: bold; letter-spacing: 1px;margin-top: 9px;">Tag
+					<span onclick="fn_mng_tag_color()" style="font-size: 15px; float: right; right: 10px; cursor: pointer; margin-top: -2px;" class="glyphicon glyphicon-cog"></span>
+				</h5>
+			</div>
+			<!-- <div id ="search_left_tag_color_content" style="background-color: #26262B; overflow: auto; overflow-x: hidden;" class="tag_list" id="tag_list"> -->
+			<div id ="search_left_tag_color_content" style="background-color: #26262B; overflow: auto; overflow-x: hidden;" class="tag_list">
+				<!-- Start Tag List	-->
+				<!-- End Tag List -->
+			</div>
+		</div>
+	</div>
+	<div class="free_disk" id="free_disk" style="margin-top: 9px;padding-left: 50px;height: 30px;">
+		<span style="color: red !important" class="focus text_bold">6.3 GB / 232.9 GB</span> 
+		<span style="color: #7c7d7f"> Used</span>			
+	</div>
+</div>
+
+<!--  Start Popup Show Free Disk -->
+<div id="free_disk_part_pop_up" style="bottom: 51px;">
+	<div style="border-bottom : 2px solid #EFECEA; padding-bottom: 10px;padding-top: 5px;">
+		<span style="color: red !important" class="focus text_bold">6.1 GB / 232.9 GB</span> <span style="color: #1C2A52"> Used</span>			</div>
+	<div id="image_count_data_free_disk_part"><p class="text_color" style="padding-top:10px">Total count  <span class="focus" style="color: red">460<span></span></span></p><p class="text_color">Category count  <span class="focus" style="color: red">10<span></span></span></p><p class="text_color">Category count (include subcategory)  <span class="focus" style="color: red">10<span></span></span></p></div>
+	<div class="arrow-down" style="width:0px; height:0px; border-right:16px solid transparent; border-left: 16px solid transparent;  border-top:16px solid #FFF; margin-left: 58px;margin-top: -3px;"></div>
+</div>
+<script type="text/javascript">
+	// Start JS show free Disk
+	$('#free_disk').mouseover(function () {
+	    $('#free_disk_part_pop_up').show();
+	});
+	$('#free_disk').mouseout(function () {
+	    $('#free_disk_part_pop_up').hide();      
+	});
+	// End JS show free Disk
+</script>
+
+<!-- Model For Tag Color -->
+<div id="tag_color_model">
+	<script type="text/javascript">
+		//Load Model for Tag Color
+		$("#tag_color_model").load("search_page/model/tagColorModel.html");
+	</script>
+</div>
+
+<!-- Model For Category Folder -->
+<div id="category_folder_model">
+	<script type="text/javascript">
+		//Load Model For Category Folder
+		$("#category_folder_model").load("search_page/model/categoryFolderModel.html");
+	</script>
+</div>
+
+<!-- END LEFT PENAL -->
+
+
+<!-- START RIGHT PENAL -->
+<div ondrop="upload_file(event)" ondragover="return false"  style="background-color: #1F1F23;padding: 0px; margin-left: 252px; ">
+	<div style="height: 32px; background-color: #161616; min-width: 700px;" id='tab_bar'>	
+	  	<div id="category_link" style="cursor: pointer; color: #FFFFFF; float: left; margin-top: 5px;">
+	  	</div>
+	    <a id="content_by_thumb_view" class="view fa fa-th fa-2x active" style="cursor: pointer; text-decoration: none; outline:none; float: right; border: none; font-size: 16px; padding-top: 7px; padding-right: 12px;" data-toggle="tooltip" data-placement="bottom" title="Thumb View"></a>
+	    <a id="content_by_list_view" class="view fa fa-th-list fa-2x" style="cursor: pointer; text-decoration: none; outline:none; float: right; border: none; font-size: 16px; padding-right: 12px; padding-top: 7px;" data-toggle="tooltip" data-placement="bottom" title="List View"></a>
+	</div>
+	<div style="height: 32px; background-color: #161616; border-top: 2px solid #080808; border-bottom: 2px solid #080808;" id=''>	
+	  	<div class="line_color_header" id="browse-sort" style="padding-left: 10px; padding-top: 4px; width: 100%; min-width: 700px ">
+			<a id="name-sorter" data-sort="FILES_BY_NAME" class="sortable-column-header header_text_color menu_icon_color" data-ascending="true" style="cursor: pointer; float: left; width: 200px;" data-toggle="tooltip" title="Sort by Name">
+				<span style="cursor: pointer; color: #FFFFFF">Title</span>
+				<i class="fa fa-sort-desc fa-lg sort_data cursor_pointer display_none_class menu_icon_color" id="name-sort-down" alt="sort down" style="display: none; vertical-align: 12%;"></i>
+				<i class="fa fa-sort-asc fa-lg sort_data cursor_pointer display_none_class menu_icon_color" id="name-sort-up" alt="sort up" style="display: none; vertical-align: 12%;"></i>
+			</a> 
+			<a id="make-date-sorter" data-sort="FILES_BY_DATE" class="sortable-column-header header_text_color menu_icon_color bolded" data-ascending="true" style="cursor: pointer; float: right; width: 200px;" data-toggle="tooltip" title="Sort by Shoot(Created) Date">
+				<span style="cursor: pointer; margin-left: 15px;color: #FFFFFF" class="modified-time">Created Date</span>
+				<i class="fa fa-sort-desc fa-lg sort_data cursor_pointer display_none_class menu_icon_color" id="make-date-sort-down" alt="sort down" style="display: inline; vertical-align: 12%; "></i>
+				<i class="fa fa-sort-asc fa-lg sort_data cursor_pointer display_none_class menu_icon_color" id="make-date-sort-up" alt="sort up" style="display: none; vertical-align: 12%;"></i>
+			</a>
+			<a id="resolution-sorter" data-sort="FILES_BY_KIND" class="sortable-column-header header_text_color menu_icon_color" data-ascending="true" style="cursor: pointer; float: right; width: 200px; " data-toggle="tooltip" title="Sort by Resolution"> 
+				<span id="kind-sorter-label" class="resolution" style="cursor: pointer; color: #FFFFFF">Resolution</span> 
+				<i class="fa fa-sort-desc fa-lg sort_data cursor_pointer display_none_class menu_icon_color" id="resolution-sort-down" alt="sort down" style="display: none; vertical-align: 12%;"></i>
+				<i class="fa fa-sort-asc fa-lg sort_data cursor_pointer display_none_class menu_icon_color" id="resolution-sort-up" alt="sort up" style="display: none; vertical-align: 12%;"></i>
+			</a>
+		</div>
+	</div>
+	<div id="search_right_menu" style="background-color: #2D2D33; ">
+		<div style="overflow: auto; margin-top: 0px; overflow-x: hidden;" id="main_content" onscroll="myFunction()">
+			<div id="tab_image_content" class="">
+				<!-- <div class="container-fluid" style="margin-top: 5px;"> -->
+				<div class="container-fluid" style="">
+				    <div class="row">
+				    	
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="image_paing" style="margin-top: -2px;height: 41px;">
+		<div class="image_paging" style="text-align: center; color: white;">
+			<button type="button" class="fas fa-angle-double-left" style="outline:none; height: 26px; border: none; background-color: #1F1F23; margin-top: 9px;"></button>
+			<button type="button" class="fas fa-angle-left" style="outline:none; height: 26px; border: none; background-color: #1F1F23; margin-top: 9px;"></button>
+
+			<input type="text" style="width: 30px; background-color: #1F1F23; border: none; text-align: right;" id="current_image_page" name="current_image_page" value="" readonly="">
+			/ <input type="text" style="width: 30px; background-color: #1F1F23; border: none; text-align: left;" id="total_image_page" name="total_image_page" value="" readonly="">
+
+			<button type="button" class="fas fa-angle-right" style="outline:none; height: 26px; border: none; background-color: #1F1F23; margin-top: 9px;"></button>
+			<button type="button" class="fas fa-angle-double-right" style="outline:none; height: 26px; border: none; background-color: #1F1F23; margin-top: 9px;"></button>
+
+			<input type="text" style="display: none; width: 30px; background-color: #1F1F23; border: none; text-align: right;" id="prev_image_page" name="prev_image_page" value="" readonly="">
+			<input type="text" style="display: none; width: 30px; background-color: #1F1F23; border: none; text-align: left;" id="next_image_page" name="next_image_page" value="" readonly="">
+		</div>			
+	</div>
+</div>
+
+<!-- Model For Image -->
+<div id="image_model">
+	<script type="text/javascript">
+		//Load Model For Image
+		$("#image_model").load("search_page/model/imageModel.html");
+	</script>
+</div>
+
+<!-- End Right panel -->
+
+<script src="search_page/controller/search_page.js"></script>
+<script src="search_page/controller/tagColorController.js"></script>
+<script src="search_page/controller/categoryController.js"></script>
+<script src="search_page/controller/imageController.js"></script>
+
+<script type="text/javascript">
+	$( "#content_by_thumb_view" ).click(function() {
+	    $("#tab_bar a.view").removeClass('active');
+	    $(this).addClass('active');
+
+	    var image_search_name = ($("#search_text").val()).trim();
+        var category_id = $("#folder_category ul li div.cls_active_item span").attr('id');
+        
+        var tag_active = $("#search_left_tag_color_content div.active_tag div").attr('class');
+	    var tag_id = null;
+	    if(tag_active){
+	        tag_id = tag_active.replace("tag_id_", '');
+	    }
+	    var page = 1;
+        fn_draw_image_content_list(image_search_name,category_id,tag_id, page);
+	});
+	$( "#content_by_list_view" ).click(function() {
+	    $("#tab_bar a.view").removeClass('active');
+	    $(this).addClass('active');
+
+	    var image_search_name = ($("#search_text").val()).trim();
+        var category_id = $("#folder_category ul li div.cls_active_item span").attr('id');
+        
+        var tag_active = $("#search_left_tag_color_content div.active_tag div").attr('class');
+	    var tag_id = null;
+	    if(tag_active){
+	        tag_id = tag_active.replace("tag_id_", '');
+	    }
+	    var page = 1;
+        fn_draw_image_content_list(image_search_name,category_id,tag_id, page);
+	});
+</script>

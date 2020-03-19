@@ -1,0 +1,46 @@
+<div id="user_management" style=" overflow: auto; height: 100%; background-color: rgb(45, 45, 51);">
+	<div class="container" style="">
+		<h3 class="page-header text_color text_bold">User Management</h3><br>
+		<div class="col-sm-14" style="">	
+			<div class="buttons" style="height:40px;margin-bottom: 10px; margin-top: -25px;">
+				<a class="btn btn-success" onclick="change_page('main_card_search');"><i class="fa fa-home fa-lg" style="margin-right: 5px;"></i>Back Home</a>
+		        <a class="btn btn-success" onclick="change_page('main_card_config_system');"><i class="fa fa-cog fa-lg" style="margin-right: 5px;"></i>Configuration System</a>	
+				<a class="btn btn-success" onclick="create_user_model();"><i class="fa fa-user-plus fa-lg" style="margin-right: 5px;"></i>Create New User</a>
+			</div>
+		</div>
+		<div class="table-responsive">
+			<table class="table" id="user_management_table">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Login_ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>User Level</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+						
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- Create User Model -->
+<div id="create_user_model" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="color: black"></div>
+<!-- Read User Model -->
+<div id="read_user_model" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="color: black"></div>
+<!-- Update User Model -->
+<div id="update_user_model" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="color: black"></div>
+<!-- Change Pass User Model -->
+<div id="change_pass_model" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="color: black"></div>
+
+<script type="text/javascript">
+	// Call Function Get All User After load
+	$( document ).ready(function() {
+		// get_allUser();
+	});
+</script>

@@ -1,0 +1,50 @@
+<!--  Start Modal Create Category-->
+<div id="create_category_model" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="">
+	<div class="modal-dialog" style="color: black;">
+		<div class="modal-content">
+			<div class="modal-header" style="padding: 1px; padding-right: 5px; padding-left: 5px; border: none;">
+		        <button type="button" class="close" data-dismiss="modal" style="outline: none; opacity: 2; color: black;">&times;</button>
+		        <h5 class="modal-title">Create a new category</h5>
+	      	</div>
+	      	<div id="" class="" style="height: 130px; border: 2px solid #D0D0D0;">
+	      		<div class="modal-body">
+					<p>Please input new category name (max length 15 characters)</p>
+					<input type="checkbox" value="" id="root_category_checkbox" onclick="fn_setRoot();">
+					<a id="" class="" style="text-decoration: none !important; cursor: pointer;"><span style="font-weight: bold; margin-right:3px; margin-left:3px;font-size: 14px;">Root category</span></a>
+					<br> 
+					<input id="new_category_name" type="text" class="form-control" placeholder="New category name" maxlength="15" pattern="[A-Za-z0-9]{3,30}">
+					<input class="category_folder_id" type="text" style="display: block;">
+				</div>
+	      	</div>
+			<div class="modal-body" style="padding: 6px 6px 40px 6px;">
+				<button id="" type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Close</button>
+				<button onclick="fn_create_new_category_folder()" id="" type="button" class="btn btn-default" style="margin-right: 10px; float: right;">Create Category Button</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Modal Create Category-->
+
+<!-- Start Modal Rename Category-->
+<div id="rename_category_model" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="">
+	<div class="modal-dialog" style="color: black;">
+		<div class="modal-content">
+			<div class="modal-header" style="padding: 3px; padding-right: 5px; padding-left: 5px; border: none;">
+		        <button type="button" class="close" data-dismiss="modal" style="outline: none; opacity: 2; color: black;">&times;</button>
+		        <h5 class="modal-title">Rename category</h5>
+	      	</div>
+	      	<div id="" class="" style="height: 130px; border: 2px solid #D0D0D0;">
+	      		<div class="modal-body sbs_popup_body">
+					<p>Please input new category name (max length 15 characters)</p><br> 
+					<input id="new_category_folder_name" type="text" class="form-control" placeholder="" value="" maxlength="15" pattern="[A-Za-z0-9]{3,30}">
+					<input class="category_folder_id" type="text" style="display: none;" value="">
+				</div>
+	      	</div>
+			<div class="modal-body" style="padding: 6px 6px 40px 6px;">
+				<button id="" type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Close</button>
+				<button onclick="fn_rename_category_folder()" id="" type="button" class="btn btn-default" style="margin-right: 10px; float: right;">Rename</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Modal Rename Category

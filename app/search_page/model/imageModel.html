@@ -1,0 +1,36 @@
+<!-- Popup Change Tag Color Start-->
+<div id="menu_tag_change_tag_color" style="">
+	<div class="" style="width: 154px;border-radius: 0px;">
+		<div class="modal-body" style=" padding-top: 0px; padding-left: 8px; padding-bottom: 0px; background-color: #f0f0f0; border: 1px solid #7D7D7D;">
+			<div class="cls_bottom" style="cursor: pointer;margin-left: -8px; width: 152px;" onclick="fn_clear_tag_color_for_image();">
+				<div style="float: left; margin-right: 9px; margin-left: 6px; color: black"><i class="fa fa-eraser" aria-hidden="true"></i></div>
+				<span style="color: black">Clear Tag</span>
+			</div>
+
+			<div class="cls_change_tag_color" style="margin-left: -8px; width: 152px; color: black;">
+			</div>
+
+			<div onclick="fn_mng_tag_color()" class="cls_bottom" style="cursor: pointer;margin-left: -8px;width: 152px;">
+				<div style="float: left; margin-right: 19px; margin-left: -3px; color: black"><span style="font-size: 15px; left: 10px;" class="glyphicon glyphicon-cog"></span></div>
+				<span style="color: black">More</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Start Context Menu for right click on Image-->
+<ul id="contextMenu" class="dropdown-menu" role="menu" style="display: none; position: absolute;">
+	<li><a tabindex="-1" class="show_image_details cursor_pointer" onclick="fn_open_detail_content_window();">View Details</a></li>
+	<li class="divider"></li>
+	<li><a tabindex="-1" class="edit_metadata_selected_images cursor_pointer" data-toggle="modal" data-target="#edit_metadata">Edit Metadata</a></li>
+	<li><a tabindex="-1" class="move_to_folder" data-toggle="modal" data-target="#move_folder">Move Category</a></li>
+	<li><a tabindex="-1" class="delete_multiple_image cursor_pointer">Delete</a></li>
+	<li class="divider hide_divider"></li>
+	<li><a tabindex="-1" class="download_multy_proxy cursor_pointer" onclick="fn_download_multy_proxy()">Download Proxy Image</a></li>
+	<li><a tabindex="-1" class="download_multy_original cursor_pointer" onclick="fn_download_multy_original()">Download Original Image</a></li>
+	<li><a tabindex="-1" class="fn_zip_download_multy_proxy cursor_pointer" onclick="fn_zip_download_multy_proxy()">Zip Download Proxy Image</a></li>
+	<li><a tabindex="-1" class="fn_zip_download_multy_original cursor_pointer" onclick="fn_zip_download_multy_original()">Zip Download Original Image</a></li>
+	<li class="divider"></li>
+	<li><a tabindex="-1" class="cancel_selected_image cursor_pointer" onclick="fn_cancel_selected_image();">Select Cancel</a></li>
+</ul>
+<!-- End Context Menu for right click on Image-->

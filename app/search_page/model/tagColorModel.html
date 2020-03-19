@@ -1,0 +1,149 @@
+<!-- Modal Tag Management-->
+<div id="tag_mng_model" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="">
+	<div class="modal-dialog" style="color: black;">
+	     <div class="modal-content" style="width: 500px; margin-top: 43%; height: 280px;border-radius: unset; background-color: #1F1F23;">
+            <div class="modal-header" style="background-color: #1F1F23; padding: 3px; padding-right: 5px; padding-left: 5px; border: none;">
+                <i onclick="close_tag_mng()" class="fa fa-times" style=" float: right; font-size: 16px;  background-color: #FFFFFF; padding-left: 3px; padding-right: 2px; border: none; border-radius: 5px; cursor: pointer;"></i>
+                <h5 class="modal-title" style="color: #FFFFFF; padding-left: 5px;">Tag Management</h5>
+            </div>
+            <div id="" class="" style="height: 35px; background-color: #505054; padding-left: 360px; margin-left: 3px; margin-right: 3px;">
+				<div class="tag-action-create" style="float: left; margin-top: 5px; background-color: #B0B0B0; padding-left: 7px; padding-right: 7px; margin-right: 5px; padding-top: 2px; padding-bottom: 2px;border-radius: 5px;">
+				    <i class="fa fa-plus icon-tag-create" onclick="openAddTagModel()" aria-hidden="true" style="cursor: pointer; color:#333333"></i>
+				</div>
+				<div class="tag-action-edit" style="float: left; margin-top: 5px; background-color: #B0B0B0; padding-left: 7px; padding-right: 7px; margin-right: 5px; padding-top: 2px; padding-bottom: 2px;border-radius: 5px;">
+				    <i class="fa fa-edit icon_tag_edit" onclick="editTagColorModel()" aria-hidden="true" style="cursor: pointer; color:#333333"></i>
+				</div>
+				<div class="tag-action-delete" style="float: left; margin-top: 5px; background-color: #B0B0B0; padding-left: 7px; padding-right: 7px; margin-right: 5px; padding-top: 2px; padding-bottom: 2px;border-radius: 5px;">
+				    <i class="fa fa-trash icon_tag_delete" onclick="openDelTagColorModel()" aria-hidden="true" style="cursor: pointer;color:#333333"></i>
+				</div>
+				<div class="tag-action-delete" style="float: left; margin-top: 5px; background-color: #B0B0B0; padding-left: 7px; padding-right: 7px; margin-right: 5px; padding-top: 2px; padding-bottom: 2px;border-radius: 5px;">
+				    <i class="fa fa-refresh" onclick="refreshTag()" aria-hidden="true" style="cursor: pointer;color:#333333"></i>
+				</div>
+            </div>
+            <div id="" class="" style="height: 35px; background-color: #161616; padding-left: 58px; margin-left: 3px; margin-right: 3px;">
+                <div class="" style="float: left; width: 290px; margin-top: 5px; color: white; padding-left: 7px; padding-right: 7px; margin-right: 5px; padding-top: 2px; padding-bottom: 2px;border-radius: 5px;">Name
+                </div>
+                <div class="" style="float: left; width: 64px; margin-top: 5px; color: white; padding-left: 7px; padding-right: 7px; margin-right: 5px; padding-top: 2px; padding-bottom: 2px;border-radius: 5px;">Color
+                </div>
+                <div class="" style="float: left; margin-top: 5px; color: white; padding-left: 7px; padding-right: 7px; margin-right: 5px; padding-top: 2px; padding-bottom: 2px;border-radius: 5px;">Active
+                </div>
+            </div>
+            <div class="tag_color_mng" style="height: 181px !important; overflow: auto; margin-left: 3px; margin-right: 3px;">
+            </div>
+	    </div>
+	</div>
+</div>
+
+<!-- Modal Add, Edit Tag Color-->
+<div id="addEditTagColorModel" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="">
+	<div class="modal-dialog" style="color: black;" >
+		<div class="modal-content" style="width: 300px; margin-top: 55%; margin-left: 100px; border-radius: unset;">
+		    <div class="modal-header" style="padding: 3px; padding-right: 5px; padding-left: 5px; border: none;">
+		      <button type="button" class="close" data-dismiss="modal" style="outline: none; opacity: 2; color: black;">&times;</button>
+		      <h5 class="tag_title_model" style="height: 0px; margin-top: -4px; padding: 5px"></h5>
+		    </div>
+		    <div id="" class="" style="height: 85px; border: 2px solid #D0D0D0;">
+		        <div style="margin-left: 5px; margin-top: 8px;">
+		          	<label style="float: left; margin-right: 67px;">Tag Name:</label>
+		          	<input type="text" id="tag_title_input" style="width: 142px;height: 25px;">
+		        </div>
+		        <div style="width : 500px; margin-left: 5px; margin-top: 8px;">
+		          	<label style="float: left; margin-right: 69px;">Tag Color:</label>
+		          	<input type="text" id="tag_color_input" style="width: 116px; float: left;height: 25px;" disabled>
+		          	<div id="" class="dropdown" style="float: left;">
+						<button class="dropdown-toggle" type="button" data-toggle="dropdown" style="margin-right: 114px; height: 25px;" aria-expanded="false">
+							<span class="caret "></span>
+						</button>
+						<ul class="dropdown-menu" style="right: 113px; left: auto; top: 24px; background-color: white; width: 143px; min-width: 99px; padding: 2px; border: 1px solid #7D7D7D; border-radius: inherit;">
+							<li class="select_box_color" onclick="change_color('#000000');" style=" background-color: #000000;"></li>
+							<li class="select_box_color" onclick="change_color('#808080');" style=" background-color: #808080;"></li>
+							<li class="select_box_color" onclick="change_color('#A9A9A9');" style=" background-color: #A9A9A9;"></li>
+							<li class="select_box_color" onclick="change_color('#D3D3D3');" style=" background-color: #D3D3D3;"></li>
+							<li class="select_box_color" onclick="change_color('#FFFFFF');" style=" background-color: #FFFFFF;"></li>
+							<li class="select_box_color" onclick="change_color('#7FFFD4');" style=" background-color: #7FFFD4;"></li>
+							<li class="select_box_color" onclick="change_color('#0000FF');" style=" background-color: #0000FF;"></li>
+							<li class="select_box_color" onclick="change_color('#000080');" style=" background-color: #000080;"></li>
+							<li class="select_box_color" onclick="change_color('#800080');" style=" background-color: #800080;"></li>
+							<li class="select_box_color" onclick="change_color('#FF1493');" style=" background-color: #FF1493;"></li>
+							<li class="select_box_color" onclick="change_color('#EE82EE');" style=" background-color: #EE82EE;"></li>
+							<li class="select_box_color" onclick="change_color('#FFC0CB');" style=" background-color: #FFC0CB;"></li>
+							<li class="select_box_color" onclick="change_color('#006400');" style=" background-color: #006400;"></li>
+							<li class="select_box_color" onclick="change_color('#008000');" style=" background-color: #008000;"></li>
+							<li class="select_box_color" onclick="change_color('#9ACD32');" style=" background-color: #9ACD32;"></li>
+							<li class="select_box_color" onclick="change_color('#FFFF00');" style=" background-color: #FFFF00;"></li>
+							<li class="select_box_color" onclick="change_color('#FFA500');" style=" background-color: #FFA500;"></li>
+							<li class="select_box_color" onclick="change_color('#FF0000');" style=" background-color: #FF0000;"></li>
+							<li class="select_box_color" onclick="change_color('#A52A2A');" style=" background-color: #A52A2A;"></li>
+							<li class="select_box_color" onclick="change_color('#DEB887');" style=" background-color: #DEB887;"></li>
+							<li class="select_box_color" onclick="change_color('#F5F5DC');" style=" background-color: #F5F5DC;"></li>
+							<li class="select_box_color" onclick="change_color('#993300');" style=" background-color: #993300;"></li>
+							<li class="select_box_color" onclick="change_color('#800000');" style=" background-color: #800000;"></li>
+							<li class="select_box_color" onclick="change_color('#666699');" style=" background-color: #666699;"></li>
+							<li class="select_box_color" onclick="change_color('#808080');" style=" background-color: #808080;"></li>
+						</ul>
+					</div>
+		        </div>
+		    </div>
+		    <div class="modal-body" style="padding: 6px 6px 40px 6px;">
+		          <button id="" type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Close</button>
+		          <button id="addNewTagColor" onclick="fn_addNewTagColor();" type="button" class="btn btn-default" style="margin-right: 10px; float: right;">Add</button>
+		          <button id="editTagColor" onclick="fn_editTagColor();" type="button" class="btn btn-default" style="margin-right: 10px; float: right; display: none;">Edit</button>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal Confirm Delete Tag Color-->
+<div id="delTagColorModel" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false" style="">
+	<div class="modal-dialog" style="color: black;" >
+	      <div class="modal-content" style="width: 300px; margin-top: 57%; margin-left: 100px; border-radius: unset;">
+	            <div class="modal-header" style="padding: 3px; padding-right: 5px; padding-left: 5px; border: none;">
+	              <button type="button" class="close" data-dismiss="modal" style="outline: none; opacity: 2; color: black;">&times;</button>
+	              <h5 class="" style="height: 0px; margin-top: -4px; padding: 5px">Delete Tag Color</h5>
+	            </div>
+	            <div id="" class="" style="height: 46px; border: 2px solid #D0D0D0; padding: 11px;">
+	                <p>Are you sure you want to delete this tag?</p>
+	            </div>
+	            <div class="modal-body" style="padding: 6px 6px 40px 6px;">
+	                  <button id="" type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Close</button>
+	                  <button id="addNewTagColor" onclick="fn_delTagColor();" type="button" class="btn btn-default" style="margin-right: 10px; float: right;">Yes</button>
+	            </div>
+	      </div>
+	</div>
+</div>
+
+<!-- Modal Must Selected Tag Color for Edit, Delete-->
+<div id="errSelectTagColorModel" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog" style="color: black;" >
+	      <div class="modal-content" style="width: 300px; margin-top: 57%; margin-left: 100px; border-radius: unset;">
+	            <div class="modal-header" style="padding: 3px; padding-right: 5px; padding-left: 5px; border: none;">
+	              	<button type="button" class="close" data-dismiss="modal" style="outline: none; opacity: 2; color: black;">&times;</button>
+	              	<h5 class="" style="height: 0px; margin-top: -4px; padding: 5px">Error</h5>
+	            </div>
+	            <div id="" style="height: 46px; border: 2px solid #D0D0D0; padding: 11px;">
+	                <p class="content"></p>
+	            </div>
+	            <div class="modal-body" style="padding: 6px 6px 40px 6px;">
+	                  	<button id="" type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Confirm</button>
+	            </div>
+	      </div>
+	</div>
+</div>
+
+<!-- Modal Title Must at least 6 characters-->
+<!-- <div id="errTagNameCharacters" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog" style="color: black;" >
+	      <div class="modal-content" style="width: 300px; margin-top: 57%; margin-left: 100px; border-radius: unset;">
+	            <div class="modal-header" style="padding: 3px; padding-right: 5px; padding-left: 5px; border: none;">
+	              	<button type="button" class="close" data-dismiss="modal" style="outline: none; opacity: 2; color: black;">&times;</button>
+	              	<h5 class="" style="height: 0px; margin-top: -4px; padding: 5px">Error</h5>
+	            </div>
+	            <div id="" style="height: 46px; border: 2px solid #D0D0D0; padding: 11px;">
+	                <p>Tag Name at least 6 characters</p>
+	            </div>
+	            <div class="modal-body" style="padding: 6px 6px 40px 6px;">
+	                  	<button id="" type="button" class="btn btn-default" data-dismiss="modal" style="float: right;">Confirm</button>
+	            </div>
+	      </div>
+	</div>
+</div> -->
